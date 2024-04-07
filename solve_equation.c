@@ -1,7 +1,6 @@
-#include "quadratic_equation.h"
-
 #include <math.h>
-#include <stdio.h>
+
+#include "quadratic_equation.h"
 
 void non_standard_quadratic(double a, double b, double c, Root *roots) {
   if (b == 0 && c == 0) {
@@ -23,10 +22,10 @@ Root solve_equation(double a, double b, double c) {
   if (a != 0) {  // при a = 0 уравнение линейное
     if (b != 0 || c != 0) {
       double discriminant = b * b - 4 * a * c;
-      if (discriminant > 0) { // уравнение имеет два корня
+      if (discriminant > 0) {  // уравнение имеет два корня
         roots.x1 = (-b + sqrt(discriminant)) / (2 * a);
         roots.x2 = (-b - sqrt(discriminant)) / (2 * a);
-      } else if (discriminant == 0) { // уравнение имеет один корень
+      } else if (discriminant == 0) {  // уравнение имеет один корень
         roots.x1 = -b / (2 * a);
         roots.x2 = roots.x1;
       }

@@ -6,7 +6,7 @@ SOURCE_FUN:=solve_equation.c
 
 all: solve_equation.a check
 		
-
+		
 solve_equation.a:
 		$(CC) $(CFLAGS) -c $(SOURCE_FUN)
 		ar rcs solve_equation.a *.o

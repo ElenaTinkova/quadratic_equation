@@ -2,6 +2,7 @@
 
 #include "quadratic_equation.h"
 
+// Решает неполное квадратное уравнение
 void non_standard_quadratic(double a, double b, double c, Root *roots) {
   if (b == 0 && c == 0) {
     roots->x1 = 0;

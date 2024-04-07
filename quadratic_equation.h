@@ -1,6 +1,6 @@
 /*!
 \file
-\brief Функции для работы с модулем quadratic_equation
+\brief Функция для работы с модулем quadratic_equation
 */
 
 #pragma once
@@ -16,16 +16,9 @@ typedef struct {
 } Root;
 
 /*!
-Решает неполное квадратное уравнение
-\param b, c Коэффициент уравнения
-\param *roots Структура для значений корней
-*/
-void non_standard_quadratic(double a, double b, double c, Root *roots);
-
-/*!
 Решает квадратное уравнение
-\param a,b,c Коэффициент уравнения
-\return Возвращает структуру root со значениями корней уравнения,
+\param a, b, c Коэффициент уравнения
+\return Возвращает структуру Root со значениями корней уравнения,
 если действительных корней не существует переменные корней хранят NAN
 */
 Root solve_equation(double a, double b, double c);

@@ -1,4 +1,5 @@
 #include "solve_equation_test.h"
+
 #include "../quadratic_equation.h"
 
 START_TEST(two_real_roots) {
@@ -57,6 +58,13 @@ START_TEST(linear_equation) {
 }
 END_TEST
 
+START_TEST(sum_options_zero) {
+  Root result = solve_equation(13, 12, -25);
+  ck_assert_double_eq_tol(result.x1, 1, 1e-6);
+  ck_assert_double_eq_tol(result.x2, -1.923076, 1e-6);
+}
+END_TEST
+
 void srunner_quadratic_equation(SRunner *sr) {
   Suite *suit_1 = suite_create("quadratic equations");
   TCase *tc1_1 = tcase_create("core");
@@ -72,7 +80,7 @@ void srunner_quadratic_equation(SRunner *sr) {
   tcase_add_test(tc1_1, non_standard_b_zero_c_negative);
   tcase_add_test(tc1_1, non_standard_c_zero);
   tcase_add_test(tc1_1, linear_equation);
-
+  tcase_add_test(tc1_1, sum_options_zero);
 }
 
 int main() {
